@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from projet.views import CompareDocumentsView, GroupDocumentsView
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('compare/', CompareDocumentsView.as_view(), name='compare-documents'),
+    path('group/', GroupDocumentsView.as_view(), name='group-documents'),
 ]
